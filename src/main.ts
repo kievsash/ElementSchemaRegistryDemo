@@ -30,7 +30,8 @@ export class CustomDomElementSchemaRegistry extends DomElementSchemaRegistry {
 
   hasProperty(tagName: string, propName: string, schemaMetas: SchemaMetadata[]): boolean {
     const elementProperties = MY_CUSTOM_PROPERTIES_SCHEMA[tagName.toLowerCase()];
-    return (elementProperties && elementProperties[propName]) || super.hasProperty(tagName, propName, schemaMetas);
+    console.log('hasProperty ', tagName, propName, !!(elementProperties && elementProperties[propName]))
+    return !!(elementProperties && elementProperties[propName]) || super.hasProperty(tagName, propName, schemaMetas);
   }
 }
 
