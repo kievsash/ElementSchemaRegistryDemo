@@ -3,3 +3,5 @@
 <foo-comp></foo-comp>
 
 <div bar="{{title}}">Angular removed bar attribute from that div silently</div>
+
+<div [attr.bar]="title">Angular keep bar attribute if we use [attr.bar]="" notation</div>
